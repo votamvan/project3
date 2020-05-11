@@ -2,5 +2,5 @@ heal
 slipper
 sneaker
 sandal
-loafers
+loafer
 boot
