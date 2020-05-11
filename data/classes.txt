@@ -1,3 +1,6 @@
 heal
 slipper
 sneaker
+sandal
+loafers
+boot
