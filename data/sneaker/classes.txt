@@ -1,0 +1,6 @@
+heal
+slipper
+sneaker
+sandal
+loafer
+boot
