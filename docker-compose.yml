@@ -8,5 +8,5 @@ services:
       context: ./web-app
     container_name: webapp-c
     ports:
-      - "8081:3838"
+      - "8081:8080"
 
