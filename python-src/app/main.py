@@ -68,7 +68,7 @@ def gradcam(**kargs):
     output_fname = create_resnet_gradcam(filename)
     return jsonify({
         "status": "success",
-        "data": url_for('uploaded_file', filename=output_fname)
+        "data": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}"
     })
 
 def get_file_upload(request):
