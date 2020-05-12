@@ -59,7 +59,10 @@ def uploaded_file(filename):
 def detect(**kargs):
     filename = get_file_upload(request)
     if not filename: return jsonify(API_RETURN["FILE_ERROR"])
-    return jsonify(API_RETURN["API_DETECT"])
+
+    api_return = API_RETURN["API_DETECT"]
+    api_return["url"] = f"{request.host_url}{url_for('uploaded_file', filename='sample-detect.png')}"
+    return jsonify(api_return)
 
 @app.route('/api/v0/gradcam', methods=['POST'])
 def gradcam(**kargs):
