@@ -1,2 +1,2 @@
 # Project3 - Deep learning
-## To run the command "docker-compose up"
+## To run the project just run "docker-compose up" in terminal
