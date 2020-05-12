@@ -11,8 +11,8 @@
           <div v-else>
             <div class="image"><img :src="item.image" /></div>      
             <div class="buttons">
-              <span style="padding-right: 10px;"><a href="removeImage(item)" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">Detect Image</a></span>
-              <span><a href="removeImage(item)" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">CAM</a></span>
+              <span style="padding-right: 10px;"><a v-on:click="removeImage" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">Detect Image</a></span>
+              <span><a v-on:click="removeImage" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">CAM</a></span>
             </div>      
             
           </div>
@@ -50,8 +50,9 @@ export default {
       };
       reader.readAsDataURL(file);
     },
-    removeImage: function (item) {
-      item.image = false; 
+    removeImage: function (e) {
+      this.item.image = false; 
+      e.preventDefault();
     }
   }
 }
