@@ -49,6 +49,31 @@ export default {
         item.image = e.target.result;
       };
       reader.readAsDataURL(file);
+
+              this.helper.request({
+                    type: 'post',
+                    withData:'json',
+                    url: this.api.getPostApi(),
+                    dataType:'json',
+                    auth:false,
+                    data: {
+                      username:this.username,
+                      password:this.password
+                    },
+                    success:(resp)=>{
+                      if(resp.status == 'error'){
+                        this.message = resp.message;
+                        this.alert_status = "alert alert-danger";
+                      }else{
+                        this.alert_status = "alert alert-success";
+                        this.message = resp.message;
+                        this.helper.setUserInfo(resp.data);
+                        setTimeout(()=>{ 
+                          window.location.href = "/";                                      
+                        }, 2000);
+                      }
+                    }
+              })
     },
     removeImage: function (e) {
       this.item.image = false; 

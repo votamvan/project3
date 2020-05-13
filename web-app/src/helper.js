@@ -140,7 +140,9 @@ module.exports = class Helper {
                                 
                             }
                             ajaxParms['beforeSend'] = ()=>{
-                                document.querySelector('#loader').style.display = 'block';
+                                if(document.querySelector('#loader')){
+                                    document.querySelector('#loader').style.display = 'block';
+                                }
                             };
                             ajaxParms['url'] = params.url;
                             ajaxParms['type'] = params.type;
@@ -167,7 +169,10 @@ module.exports = class Helper {
                                                     return myXhr;
                                                 };
                             ajaxParms['complete'] = (resp) =>{
-                                    document.querySelector('#loader').style.display = 'none';
+                                
+                                    if(document.querySelector('#loader')){
+                                        document.querySelector('#loader').style.display = 'none';
+                                    }
                                     
                                     if (typeof(params.complete) == 'function') {
                                         if(resp.status == 403){//credials
