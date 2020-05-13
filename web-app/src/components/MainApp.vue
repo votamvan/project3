@@ -11,10 +11,11 @@
           <div v-if="item.image">
             <div class="image">
               <div class="row">
-                <div class="col-sm-6">
-                  <img :src="item.image" class="img-responsive" />
+                <div class="col-sm-8">
+                  <img v-if="loading2 == false && loading == false" :src="item.image" class="img-responsive" />
+                  <img v-if="loading2 == true || loading == true" class="img-responsive"  src="./../assets/loading.gif" />
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                   <p v-for="(result,index) in results" :key="index">
                     {{result.class}}<br/>
                     {{result.score}}
@@ -51,6 +52,7 @@ export default {
     return {
       loading:false,
       loading2:false,
+
       results:[],
       item: {
         image: false
