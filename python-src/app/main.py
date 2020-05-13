@@ -1,6 +1,6 @@
 from datetime import datetime
 start_time = datetime.now()
-
+from collections import defaultdict
 import sys, traceback
 import json
 import os
@@ -21,9 +21,16 @@ CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH
 dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
-STORE_DATA = {}
+data_json = {}
 with open(dir_path + "product-store.json") as json_file:
-    STORE_DATA = json.load(json_file)
+    data_json = json.load(json_file)
+
+STORE_DATA = defaultdict(list)
+CATEGORY = ["heel", "slipper", "sneaker", "sandal", "loafer", "boot"]
+for cat in CATEGORY:
+    for record in data_json:
+        if cat in record["Type"]:
+            STORE_DATA[cat].append(record)
 
 # dummy API
 API_RETURN = dict(
@@ -54,9 +61,11 @@ def detect(**kargs):
     output_fname, text = create_yolov3_detect(filename)
 
     # add store info
-    store_data = {}
+    store_data = []
     if len(text) > 2:
-        store_data = STORE_DATA
+        for cat in CATEGORY:
+            if cat in text:
+                store_data.extend(STORE_DATA[cat])
 
     return jsonify({
         "status": "success",
