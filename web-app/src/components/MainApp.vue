@@ -5,7 +5,7 @@
         <div class="color-box__full--large color-box--white" >
           <div v-if="!item.image">
             <h2>Select an image</h2>
-            <input type="file" id="file" @change="onFileChange(item, $event)"/>
+            <input type="file" name="file" id="file" @change="onFileChange(item, $event)"/>
             <label for="file" >Choose a file</label>       
           </div>
           <div v-else>
@@ -49,29 +49,23 @@ export default {
         item.image = e.target.result;
       };
       reader.readAsDataURL(file);
-
+      console.log("requested Url:"+this.api.getPostApi())
+              var formData = new FormData();
+              formData.append('file',file)
               this.helper.request({
                     type: 'post',
-                    withData:'json',
+                    withData:'formData',
                     url: this.api.getPostApi(),
                     dataType:'json',
                     auth:false,
-                    data: {
-                      username:this.username,
-                      password:this.password
-                    },
+                    data: formData,
                     success:(resp)=>{
-                      if(resp.status == 'error'){
-                        this.message = resp.message;
-                        this.alert_status = "alert alert-danger";
-                      }else{
-                        this.alert_status = "alert alert-success";
-                        this.message = resp.message;
-                        this.helper.setUserInfo(resp.data);
-                        setTimeout(()=>{ 
-                          window.location.href = "/";                                      
-                        }, 2000);
-                      }
+                      console.log(resp)
+                      // if(resp.status == 'error'){
+
+                      // }else{
+                      //   console.log(resp)
+                      // }
                     }
               })
     },

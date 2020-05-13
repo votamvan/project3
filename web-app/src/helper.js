@@ -124,7 +124,7 @@ module.exports = class Helper {
                         if (window.$) {
 
                             var ajaxParms = {};
-                            ajaxParms['dataType'] = 'json';
+                            // ajaxParms['dataType'] = 'json';
 
                             if(typeof(params.auth) == 'undefined'){
                                 ajaxParms['headers'] = {
