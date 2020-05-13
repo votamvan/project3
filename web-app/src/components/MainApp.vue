@@ -54,32 +54,27 @@ export default {
       };
       reader.readAsDataURL(file);
       console.log("requested Url:"+this.api.getPostApi())
+      
               var formData = new FormData();
               formData.append('file',file)
-              
-              this.helper.request({
-                    type: 'post',
-                    withData:'formData',
-                    url: this.api.getPostApi(),
-                    dataType:'json',
-                    auth:false,
-                    data: formData,
-                    success:(resp)=>{
-                      console.log(resp)
-                      // var urlCreator = window.URL || window.webkitURL;
-                      // this.item.image = btoa(encodeURIComponent(resp));
-                      this.item.image = new Blob([resp]);
 
-                      //var urlCreator = window.URL || window.webkitURL;
-                      //this.item.image = window.URL.createObjectURL(resp);
+              var myHeaders = new Headers();
+              myHeaders.append('pragma', 'no-cache');
+              myHeaders.append('cache-control', 'no-cache');
 
-                      // if(resp.status == 'error'){
-
-                      // }else{
-                      //   console.log(resp)
-                      // }
-                    }
+              fetch(this.api.getPostApi(),{
+                method: 'POST',
+                body: formData,
+                headers: myHeaders
               })
+              .then(function(data){
+                return data.blob();
+              })
+              .then((img)=>{
+                var dd = URL.createObjectURL(img);
+                this.item.image = dd;
+              })
+
     },
     removeImage: function (e) {
       this.item.image = false; 
