@@ -11,6 +11,8 @@ from werkzeug.utils import secure_filename
 # internal import
 from config import UPLOAD_FOLDER, UPLOAD_FORM, ALLOWED_EXTENSIONS, MAX_CONTENT_LENGTH
 from models.resnet_gradcam import create_resnet_gradcam
+from models.yolov3_keras import create_yolov3_detect
+
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -59,10 +61,12 @@ def uploaded_file(filename):
 def detect(**kargs):
     filename = get_file_upload(request)
     if not filename: return jsonify(API_RETURN["FILE_ERROR"])
-
-    api_return = API_RETURN["API_DETECT"]
-    api_return["url"] = f"{request.host_url}{url_for('uploaded_file', filename='sample-detect.png')}"
-    return jsonify(api_return)
+    output_fname = create_yolov3_detect(filename)
+    return jsonify({
+        "status": "success",
+        "data": API_RETURN["API_DETECT"]["data"],
+        "url": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}"
+    })
 
 @app.route('/api/v0/gradcam', methods=['POST'])
 def gradcam(**kargs):
