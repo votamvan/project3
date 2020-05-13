@@ -25,21 +25,7 @@ app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH
 API_RETURN = dict(
     API_ERROR = {"status": "api error"},
     FILE_ERROR = {"status": "error", "message": "file not found"},
-    API_DETECT = {
-    "status": "success",
-    "data": [
-            {
-                "bbox": [0, 0, 50, 70],
-                "class": "slipper",
-                "score": 0.83
-            },
-            {
-                "bbox": [10, 20, 100, 200],
-                "class": "boots",
-                "score": 0.9
-            }
-        ]
-    }
+    API_DETECT = {"status": "success"}
 )
 
 # real API
@@ -61,10 +47,10 @@ def uploaded_file(filename):
 def detect(**kargs):
     filename = get_file_upload(request)
     if not filename: return jsonify(API_RETURN["FILE_ERROR"])
-    output_fname = create_yolov3_detect(filename)
+    output_fname, text = create_yolov3_detect(filename)
     return jsonify({
         "status": "success",
-        "data": API_RETURN["API_DETECT"]["data"],
+        "data": text,
         "url": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}"
     })
 
