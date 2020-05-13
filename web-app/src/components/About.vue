@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="container">
-      
+      About page
     </div>
   </div>
 </template>
@@ -13,6 +13,7 @@ export default {
     ram: String
   },
   data() {
+    alert('about page');
     return {
       sita: ""
     };

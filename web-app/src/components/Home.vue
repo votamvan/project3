@@ -20,11 +20,11 @@
             <router-link
               style="font-size:30px;color:black"
               class="dropdown-item"
-              to="/MainApp"
+              to="/main-app"
             >Detect</router-link>
           </li>
           <li>
-            <router-link style="font-size:30px;color:black" class="dropdown-item" to="/Abou">About</router-link>
+            <router-link style="font-size:30px;color:black" class="dropdown-item" to="/about">About</router-link>
           </li>
         </ul>
       </div>
