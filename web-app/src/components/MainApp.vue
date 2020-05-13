@@ -107,8 +107,8 @@ export default {
       })
       .then(function(response){
         if (response.ok) {
-            return response.blob();
-            // return response.json();
+            // return response.blob();
+            return response.json();
         }
         throw new Error('Network response was not ok.');
             
@@ -116,10 +116,10 @@ export default {
       .then((resp)=>{
 
         console.log(resp)
-        var url = URL.createObjectURL(resp);
-        this.item.image = url;
+        // var url = URL.createObjectURL(resp);
+        // this.item.image = url;
         //this.results = resp.data
-        // this.item.image = resp.url+"?t=" + new Date().getTime();
+        this.item.image = resp.data+"?t=" + new Date().getTime();
 
         this.loading = false;
       })

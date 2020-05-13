@@ -11,7 +11,7 @@ module.exports = class Api {
 		return this.getHostUrl()+'/api/'+this.getApiVersion();
 	}
 	getPostApi(){
-		return this.getHostUrl()
+		return this.getApiUrl()+'/gradcam';
 	}
 	getDetectApi(){
 		return this.getApiUrl()+'/detect';
