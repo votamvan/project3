@@ -32,13 +32,30 @@
               <i class="fa fa-spinner fa-spin" v-if="loading2"></i>
               Detect Image
             </a></span>
-              <span>
+              <span style="padding-right: 10px;">
                 <a v-on:click="callApi" class="btn btn-success btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
                   <i class="fa fa-spinner fa-spin" v-if="loading"></i>
                   CAM
                 </a>
             </span>
-            </div>      
+            <span>
+              <a v-if="this.currentApi == 'DETECT' " class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" v-on:click="viewSimilarProduct" data-interaction-type="Button" id="lp-bottom-cta">
+                  View Similar products <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+            </span>
+            </div> 
+                 
+          </div>
+          <div class="store-container">
+              <h4>Similar products</h4>
+              <div class="row">
+                <div class="col-sm-4" v-for="(storeData,index) in storeDatas" :key="index">
+                  <p>Type: {{storeData.Type}}</p>
+                  <p>Name: {{storeData.name}}</p>
+                  <p>Price: USD{{storeData.price}}</p>
+                  <img class="img-responsive" :src="storeData.URL">
+                </div>
+              </div>
           </div>
         </div>
       </div>    
@@ -53,9 +70,10 @@ export default {
   },
   data: function () {
     return {
+      currentApi:'',
       loading:false,
       loading2:false,
-
+      storeDatas:[],
       results:"",
       item: {
         image: false
@@ -63,9 +81,7 @@ export default {
     }
   },
   methods: {
-    hexToBase64(str) {
-        return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
-    },
+
     onFileChange(e) {
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length)
@@ -78,14 +94,18 @@ export default {
         this.item.image = e.target.result;
       };
       reader.readAsDataURL(file);
-
+      this.storeDatas = [];
     },
     removeImage: function (e) {
       this.item.image = false; 
       this.results = "";
+      this.currentApi = '';
       e.preventDefault();
+      window.$(".store-container").slideUp();
     },
     callApi(e){
+      window.$(".store-container").slideUp();
+      this.currentApi = '';
       this.results = "";
       var api  = this.api.getPostApi();
       console.log("requested Url:"+api)
@@ -120,14 +140,16 @@ export default {
         // this.item.image = url;
         //this.results = resp.data
         this.item.image = resp.data+"?t=" + new Date().getTime();
-
+        this.currentApi = 'CAM';
         this.loading = false;
       })
 
       e.preventDefault();
     },
     detectApi(e){
+
       this.results = "";
+      this.currentApi = '';
       var api  = this.api.getDetectApi();
       console.log("requested Url:"+api)
 
@@ -155,16 +177,24 @@ export default {
       })
       .then((resp)=>{
 
-        console.log(resp)
-
-        this.results = resp.data
+        console.log(resp);
+        this.results = resp.data;
+        this.storeDatas = resp.store;
         this.item.image = resp.url+"?t=" + new Date().getTime();
-
+        this.currentApi = 'DETECT';
         this.loading2 = false;
+        
       })
 
       e.preventDefault();
+    },
+    viewSimilarProduct(e){
+      e.preventDefault();
+      window.$(".store-container").slideToggle();
     }
+  },
+  mounted(){
+    document.querySelector(".store-container").style.display = 'none';
   }
 }
 </script>
