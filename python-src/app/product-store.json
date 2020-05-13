@@ -1,6 +1,6 @@
 [
   {
-    "image": "sneaker-E001.jpg",
+    "image": "/uploads/sneaker-E001.jpg",
     "name": "ASOS DESIGN Wide Fit Day Light chunky flatform Lace Up Sneakers",
     "Type": "sneaker",
     "description": "This is ASOS DESIGN - your go-to for all the latest trends",
@@ -8,7 +8,7 @@
     "URL": "https://www.asos.com/us/asos-design/asos-design-wide-fit-day-light-chunky-flatform-lace-up-sneakers/prd/8247955"
   },
   {
-    "image": "sneaker-E002.jpg",
+    "image": "/uploads/sneaker-E002.jpg",
     "name": "Striped Sneakers - White And Rainbow",
     "Type": "sneaker",
     "description": "Your go-anywhere lace-up trainers have received a few sartorial updates. Side stripes offer an athletic aesthetic and a contrasting toe panel adds extra interest. Comfortable and seriously stylish",
@@ -16,7 +16,7 @@
     "URL": "https://www.bodenusa.com/en-us/striped-sneakers-white-and-rainbow/sty-a0409-mul"
   },
   {
-    "image": "loafer-E001.jpg",
+    "image": "/uploads/loafer-E001.jpg",
     "name": "The Luca",
     "Type": "loafer",
     "description": "Meet the Luca, our take on the timeless penny loafer. Details like a classic penny bridge, supple full-grain leather, and a sleek toe shape provide everything you need in a loafer, and more. An instant upgrade to your everyday attire.",
@@ -24,7 +24,7 @@
     "URL": "https://adelanteshoes.com/products/the-luca"
   },
   {
-    "image": "loafer-E002.jpg",
+    "image": "/uploads/loafer-E002.jpg",
     "name": "Jane Loafer",
     "Type": "loafer",
     "description": "These loafers feature a square toe, angled beech wood heel, signature T+T wax stamp hardwear on a twisted strap, orthopedic memory foam insole, and a recyclable rubber outsole. 100% vegan and cruelty-free. Spot clean. Made in Los Angeles.",
@@ -32,7 +32,7 @@
     "URL": "https://www.olivela.com/products/taylor-thomas-jane-loafer-173102"
   },
   {
-    "image": "heel-E001.jpg",
+    "image": "/uploads/heel-E001.jpg",
     "name": "The Nudistsong Sandal",
     "Type": "heel,sandal",
     "description": "These leather sandals feature open-toe vamp strap, leather insole, covered heel, and adjustable ankle strap with buckle closure.",
@@ -40,7 +40,7 @@
     "URL": "https://www.olivela.com/products/stuart-weitzman-the-nudistsong-sandal-8674"
   },
   {
-    "image": "heel-E002.jpg",
+    "image": "/uploads/heel-E002.jpg",
     "name": "GARDEN GLAM CLEAR PUMPS",
     "Type": "heel",
     "description": "Garden Glam Clear Pumps got ya dancin’ in the flower beds, boo! It’s a garden party in these supa cute pumps that have a clear floral design, pointed toes N’ skinny heels.",
@@ -48,7 +48,7 @@
     "URL": "https://www.dollskill.com/clear-pumps-floral.html"
   },
   {
-    "image": "slipper-E001.jpg",
+    "image": "/uploads/slipper-E001.jpg",
     "name": "Quilted Slippers",
     "Type": "slipper",
     "description": "With plush patterned terry and ribbed rubber soles, these cushioned slippers are like pillows for your feet. Pair with our Classic Bathrobe and Classic Towels to dress yourself in comfort from head to toe.",
@@ -56,7 +56,7 @@
     "URL": "https://www.parachutehome.com/products/quilted-slippers"
   },
   {
-    "image": "slipper-E002.jpg",
+    "image": "/uploads/slipper-E002.jpg",
     "name": "Sasawashi Room Shoes",
     "Type": "slipper",
     "description": "Room shoes are an essential element in every Japanese home. This breathable version is made from pill-free Sasawashi fabric that naturally absorbs moisture and odors. Antibacterial kumazasa extract and breathable washi fabric keep these slippers feeling fresh and comfortable with or without socks year round.",
