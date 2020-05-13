@@ -14,12 +14,10 @@
                 <div class="col-sm-8">
                   <img v-if="loading2 == false && loading == false" :src="item.image" class="img-responsive" />
                   <img v-if="loading2 == true || loading == true" class="img-responsive"  src="./../assets/loading.gif" />
+                  <p>{{results}}</p>
                 </div>
                 <div class="col-sm-4">
-                  <p v-for="(result,index) in results" :key="index">
-                    {{result.class}}<br/>
-                    {{result.score}}
-                  </p>
+                  
                 </div>
               </div>
             </div>      
@@ -58,7 +56,7 @@ export default {
       loading:false,
       loading2:false,
 
-      results:[],
+      results:"",
       item: {
         image: false
       }
@@ -84,12 +82,12 @@ export default {
     },
     removeImage: function (e) {
       this.item.image = false; 
-      this.results = [];
+      this.results = "";
       e.preventDefault();
     },
     callApi(e){
+      this.results = "";
       var api  = this.api.getPostApi();
-      // var api  = this.api.getDetectApi();
       console.log("requested Url:"+api)
 
       this.loading = true;
@@ -120,7 +118,7 @@ export default {
         console.log(resp)
         var url = URL.createObjectURL(resp);
         this.item.image = url;
-        // this.results = resp.data
+        //this.results = resp.data
         // this.item.image = resp.url+"?t=" + new Date().getTime();
 
         this.loading = false;
@@ -129,6 +127,7 @@ export default {
       e.preventDefault();
     },
     detectApi(e){
+      this.results = "";
       var api  = this.api.getDetectApi();
       console.log("requested Url:"+api)
 
@@ -158,7 +157,7 @@ export default {
 
         console.log(resp)
 
-        // this.results = resp.data
+        this.results = resp.data
         this.item.image = resp.url+"?t=" + new Date().getTime();
 
         this.loading2 = false;
