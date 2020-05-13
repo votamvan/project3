@@ -9,12 +9,13 @@
             <label for="file" >Choose a file</label>       
           </div>
           <div v-else>
-            <div class="image"><img :src="item.image" /></div>      
+            <div class="image">
+              <img :src="item.image" />
+            </div>      
             <div class="buttons">
               <span style="padding-right: 10px;"><a v-on:click="removeImage" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">Detect Image</a></span>
               <span><a v-on:click="removeImage" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">CAM</a></span>
             </div>      
-            
           </div>
         </div>
       </div>    
@@ -36,6 +37,9 @@ export default {
     }
   },
   methods: {
+    hexToBase64(str) {
+        return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
+    },
     onFileChange(item, e) {
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length)
@@ -52,6 +56,7 @@ export default {
       console.log("requested Url:"+this.api.getPostApi())
               var formData = new FormData();
               formData.append('file',file)
+              
               this.helper.request({
                     type: 'post',
                     withData:'formData',
@@ -61,6 +66,13 @@ export default {
                     data: formData,
                     success:(resp)=>{
                       console.log(resp)
+                      // var urlCreator = window.URL || window.webkitURL;
+                      // this.item.image = btoa(encodeURIComponent(resp));
+                      this.item.image = new Blob([resp]);
+
+                      //var urlCreator = window.URL || window.webkitURL;
+                      //this.item.image = window.URL.createObjectURL(resp);
+
                       // if(resp.status == 'error'){
 
                       // }else{
