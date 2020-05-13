@@ -75,7 +75,7 @@ export default {
   },
   data: function () {
     return {
-      baseUrl:this.api.getHostUrl()+'/uploads/',
+      baseUrl:this.api.getHostUrl(),
       currentApi:'',
       loading:false,
       loading2:false,
