@@ -64,8 +64,9 @@ export default {
       e.preventDefault();
     },
     callApi(e){
-
-      console.log("requested Url:"+this.api.getPostApi())
+      //var api  = this.api.getPostApi();
+      var api  = this.api.getDetectApi();
+      console.log("requested Url:"+api)
 
       this.loading = true;
       var element = document.getElementById('file');
@@ -77,17 +78,26 @@ export default {
       myHeaders.append('pragma', 'no-cache');
       myHeaders.append('cache-control', 'no-cache');
 
-      fetch(this.api.getPostApi(),{
+      fetch(api,{
         method: 'POST',
         body: formData,
         headers: myHeaders
       })
-      .then(function(data){
-        return data.blob();
+      .then(function(response){
+        if (response.ok) {
+            // return response.blob();
+            return response.json();
+        }
+        throw new Error('Network response was not ok.');
+            
       })
-      .then((img)=>{
-        var dd = URL.createObjectURL(img);
-        this.item.image = dd;
+      .then((resp)=>{
+        console.log(resp.url)
+        // var url = URL.createObjectURL(resp);
+        // this.item.image = url;
+
+        this.item.image = resp.url+"?t=" + new Date().getTime();
+
         this.loading = false;
       })
 
