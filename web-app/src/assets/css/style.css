@@ -1,8 +1,7 @@
-.full-bg{
-			background-image: url("background.jpg");
-			background-size: 100%;
-			background-repeat: repeat-y;
-			min-height: 640px;
+.full-bg,html{
+            background: url("https://i.imgur.com/2XNzY.png");
+			 background-size: 100%;
+		
 }
 
 .hero__logo {
@@ -37,7 +36,7 @@
     clear: both;
 }
 
-.col-sm-8,{
+.col-sm-8{
     position: relative;
     min-height: 1px;
     padding-left: 15px;
@@ -148,4 +147,12 @@ a {
     -webkit-transition: ease all .3s;
     transition: ease all .3s;
 }
-  
+#nav{
+    
+        border-radius: 25px;
+        background: #73AD21;
+        padding: 20px; 
+        width: 200px;
+        height: 150px;  
+     
+} 
