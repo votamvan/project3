@@ -12,7 +12,7 @@
             <div class="image">
               <div class="row">
                 <div class="col-sm-6">
-                  <img :src="item.image" />
+                  <img :src="item.image" class="img-responsive" />
                 </div>
                 <div class="col-sm-6">
                   <p v-for="(result,index) in results" :key="index">
@@ -23,9 +23,13 @@
               </div>
             </div>      
             <div class="buttons">
-              <span style="padding-right: 10px;"><a v-on:click="removeImage" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">Detect Image</a></span>
+              <span style="padding-right: 10px;"><a v-on:click="removeImage" class="btn btn-danger btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">Next Image</a></span>
+              <span style="padding-right: 10px;"><a v-on:click="detectApi" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
+              <i class="fa fa-spinner fa-spin" v-if="loading2"></i>
+              Detect Image
+            </a></span>
               <span>
-                <a v-on:click="callApi" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
+                <a v-on:click="callApi" class="btn btn-success btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
                   <i class="fa fa-spinner fa-spin" v-if="loading"></i>
                   CAM
                 </a>
@@ -46,6 +50,7 @@ export default {
   data: function () {
     return {
       loading:false,
+      loading2:false,
       results:[],
       item: {
         image: false
@@ -76,8 +81,8 @@ export default {
       e.preventDefault();
     },
     callApi(e){
-      //var api  = this.api.getPostApi();
-      var api  = this.api.getDetectApi();
+      var api  = this.api.getPostApi();
+      // var api  = this.api.getDetectApi();
       console.log("requested Url:"+api)
 
       this.loading = true;
@@ -97,7 +102,46 @@ export default {
       })
       .then(function(response){
         if (response.ok) {
-            // return response.blob();
+            return response.blob();
+            // return response.json();
+        }
+        throw new Error('Network response was not ok.');
+            
+      })
+      .then((resp)=>{
+
+        console.log(resp)
+        var url = URL.createObjectURL(resp);
+        this.item.image = url;
+        // this.results = resp.data
+        // this.item.image = resp.url+"?t=" + new Date().getTime();
+
+        this.loading = false;
+      })
+
+      e.preventDefault();
+    },
+    detectApi(e){
+      var api  = this.api.getDetectApi();
+      console.log("requested Url:"+api)
+
+      this.loading2 = true;
+      var element = document.getElementById('file');
+
+      var formData = new FormData();
+      formData.append('file',element.files[0])
+
+      var myHeaders = new Headers();
+      myHeaders.append('pragma', 'no-cache');
+      myHeaders.append('cache-control', 'no-cache');
+
+      fetch(api,{
+        method: 'POST',
+        body: formData,
+        headers: myHeaders
+      })
+      .then(function(response){
+        if (response.ok) {
             return response.json();
         }
         throw new Error('Network response was not ok.');
@@ -106,12 +150,11 @@ export default {
       .then((resp)=>{
 
         console.log(resp)
-        // var url = URL.createObjectURL(resp);
-        // this.item.image = url;
-        this.results = resp.data
+
+        // this.results = resp.data
         this.item.image = resp.url+"?t=" + new Date().getTime();
 
-        this.loading = false;
+        this.loading2 = false;
       })
 
       e.preventDefault();
@@ -120,20 +163,3 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
