@@ -20,6 +20,10 @@ CORS(app)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = MAX_CONTENT_LENGTH
+dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
+STORE_DATA = {}
+with open(dir_path + "product-store.json") as json_file:
+    STORE_DATA = json.load(json_file)
 
 # dummy API
 API_RETURN = dict(
@@ -48,10 +52,17 @@ def detect(**kargs):
     filename = get_file_upload(request)
     if not filename: return jsonify(API_RETURN["FILE_ERROR"])
     output_fname, text = create_yolov3_detect(filename)
+
+    # add store info
+    store_data = {}
+    if len(text) > 2:
+        store_data = STORE_DATA
+
     return jsonify({
         "status": "success",
         "data": text,
-        "url": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}"
+        "url": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}",
+        "store": store_data
     })
 
 @app.route('/api/v0/gradcam', methods=['POST'])
