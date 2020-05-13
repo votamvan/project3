@@ -49,11 +49,10 @@
           <div class="store-container">
               <h4>Similar products</h4>
               <div class="row">
-                <div class="col-sm-4" v-for="(storeData,index) in storeDatas" :key="index">
-                  <p>Type: {{storeData.Type}}</p>
-                  <p>Name: {{storeData.name}}</p>
-                  <p>Price: USD{{storeData.price}}</p>
-                  <img class="img-responsive" :src="storeData.URL">
+                <div class="col-sm-4 similar-pro" v-for="(storeData,index) in storeDatas" :key="index">
+                  <p><b>Type:</b> {{storeData.Type}}</p>
+                  <p><b>Name:</b> <a target="_blank" :href="storeData.URL">{{storeData.name}}</a></p>
+                  <p><b>Price:</b> USD{{storeData.price}}</p>
                 </div>
               </div>
           </div>
@@ -62,6 +61,12 @@
     </div>      
     </div>
 </template>
+<style type="text/css">
+  .similar-pro{
+    border-bottom: 1px solid;
+    border-radius: 0px 0px 10px 0px;
+  }
+</style>
 <script>
 export default {
   name: 'MainApp',
