@@ -50,9 +50,9 @@
               <h4>Similar products</h4>
               <div class="row">
                 <div class="col-sm-4 similar-pro" v-for="(storeData,index) in storeDatas" :key="index">
-                  <p><b>Type:</b> {{storeData.Type}}</p>
+                  <img class="img-responsive" :src="baseUrl+storeData.image">
                   <p><b>Name:</b> <a target="_blank" :href="storeData.URL">{{storeData.name}}</a></p>
-                  <p><b>Price:</b> USD{{storeData.price}}</p>
+                  <p><b>Price:</b> {{storeData.price}}</p>
                 </div>
               </div>
           </div>
@@ -75,6 +75,7 @@ export default {
   },
   data: function () {
     return {
+      baseUrl:this.api.getHostUrl()+'/uploads/',
       currentApi:'',
       loading:false,
       loading2:false,
