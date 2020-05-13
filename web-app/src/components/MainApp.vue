@@ -10,7 +10,17 @@
           </div>
           <div v-if="item.image">
             <div class="image">
-              <img :src="item.image" />
+              <div class="row">
+                <div class="col-sm-6">
+                  <img :src="item.image" />
+                </div>
+                <div class="col-sm-6">
+                  <p v-for="(result,index) in results" :key="index">
+                    {{result.class}}<br/>
+                    {{result.score}}
+                  </p>
+                </div>
+              </div>
             </div>      
             <div class="buttons">
               <span style="padding-right: 10px;"><a v-on:click="removeImage" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">Detect Image</a></span>
@@ -36,6 +46,7 @@ export default {
   data: function () {
     return {
       loading:false,
+      results:[],
       item: {
         image: false
       }
@@ -61,6 +72,7 @@ export default {
     },
     removeImage: function (e) {
       this.item.image = false; 
+      this.results = [];
       e.preventDefault();
     },
     callApi(e){
@@ -92,10 +104,11 @@ export default {
             
       })
       .then((resp)=>{
-        console.log(resp.url)
+
+        console.log(resp)
         // var url = URL.createObjectURL(resp);
         // this.item.image = url;
-
+        this.results = resp.data
         this.item.image = resp.url+"?t=" + new Date().getTime();
 
         this.loading = false;
