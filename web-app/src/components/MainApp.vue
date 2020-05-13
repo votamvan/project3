@@ -24,7 +24,12 @@
               </div>
             </div>      
             <div class="buttons">
-              <span style="padding-right: 10px;"><a v-on:click="removeImage" class="btn btn-danger btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">Next Image</a></span>
+              <span style="padding-right: 10px;">
+                <a v-on:click="removeImage" class="btn btn-danger btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
+                Next Image
+                <i class="fa fa-step-forward"></i>
+              </a>
+              </span>
               <span style="padding-right: 10px;"><a v-on:click="detectApi" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
               <i class="fa fa-spinner fa-spin" v-if="loading2"></i>
               Detect Image
