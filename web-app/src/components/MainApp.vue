@@ -14,7 +14,12 @@
             </div>      
             <div class="buttons">
               <span style="padding-right: 10px;"><a v-on:click="removeImage" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">Detect Image</a></span>
-              <span><a v-on:click="callApi" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">CAM</a></span>
+              <span>
+                <a v-on:click="callApi" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
+                  <i class="fa fa-spinner fa-spin" v-if="loading"></i>
+                  CAM
+                </a>
+            </span>
             </div>      
           </div>
         </div>
@@ -30,6 +35,7 @@ export default {
   },
   data: function () {
     return {
+      loading:false,
       item: {
         image: false
       }
@@ -46,7 +52,6 @@ export default {
       this.createImage(files[0]);
     },
     createImage(file) {
-      // var image = new Image();
       var reader = new FileReader();
       reader.onload = (e) => {
         this.item.image = e.target.result;
@@ -62,7 +67,7 @@ export default {
 
       console.log("requested Url:"+this.api.getPostApi())
 
-
+      this.loading = true;
       var element = document.getElementById('file');
 
       var formData = new FormData();
@@ -83,6 +88,7 @@ export default {
       .then((img)=>{
         var dd = URL.createObjectURL(img);
         this.item.image = dd;
+        this.loading = false;
       })
 
       e.preventDefault();
