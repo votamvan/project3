@@ -22,7 +22,7 @@
                 <div class="col-sm-4 col-md-4 col-lg-4">
                   <h4>Step 1. Select an image</h4>
                   <h4>Step 2. Detect product</h4>
-                  <h4>Step 3. CAM</h4>
+                  <h4>Step 3. Grad-CAM</h4>
                   <h4>Step 4. Similar Products</h4>
                 </div>
               </div>
@@ -35,7 +35,7 @@
               </a>
               <a style="margin-left: 10px;" v-on:click="callApi" :class="btnCAM + ((item.image)?'':' disabled')">
                   <i class="fa fa-spinner fa-spin" v-if="loading"></i>
-                  CAM
+                  Grad-CAM
                 </a>
                 <a style="margin-left: 10px;" v-if="storeDatas.length > 0" :class="btnViewSimilar + ((item.image)?'':' disabled')" v-on:click="viewSimilarProduct">
                   View Similar products <i class="fa fa-angle-down" aria-hidden="true"></i>

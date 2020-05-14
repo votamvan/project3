@@ -9,24 +9,30 @@
      </div>
     </div>
     <MainApp/>
-    <div style="padding: 15px">
+    <div style="padding: 15px;
+    font-size: 15px;
+    color: rgb(33, 33, 33);
+    font-weight: 100;
+    float: left;
+    background: #ffffffc7;
+    border-radius: 0px 0px 15px 0px;">
       <div>
-       <span style="font-size: 15px;color: white;font-weight: 100;">Professor: Mohamed Abdelrazik</span>
+       <span>Professor: Mohamed Abdelrazik</span>
       </div>
       <div>
-       <span style="font-size: 15px;color: white;font-weight: 100;">Tam Van Vo - 610746</span>
+       <span>Tam Van Vo - 610746</span>
       </div>
       <div>
-       <span style="font-size: 15px;color: white;font-weight: 100;">Quynh Pham - 610716</span>
+       <span>Quynh Pham - 610716</span>
       </div>
       <div>
-       <span style="font-size: 15px;color: white;font-weight: 100;">Samsher Bahadur Rana - 611060</span>
+       <span>Samsher Bahadur Rana - 611060</span>
       </div>
       <div>
-       <span style="font-size: 15px;color: white;font-weight: 100;">Van Vong Tran - 610772</span>
+       <span>Van Vong Tran - 610772</span>
       </div>
       <div>
-       <span style="font-size: 15px;color: white;font-weight: 100;">Yared Geberetsadik Beyene - 110466</span>
+       <span>Yared Geberetsadik Beyene - 110466</span>
       </div>
     </div>
   </div>
