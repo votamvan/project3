@@ -4,24 +4,18 @@
       <div class="col-sm-8 col-sm-offset-2">
         <div class="color-box__full--large color-box--white" >
           <div>
-            <h2 v-if="!item.image">
-              Step 1. Select an image<br/>
-              Step 2. Detect product<br/>
-              Step 3. CAM<br/>
-              Step 4. Similar Products
-            </h2>
-                   
-          </div>
-          <div>
             <div class="image">
               <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-8 col-md-8 col-lg-8">
                   <img v-if="loading2 == false && loading == false" :src="item.image" class="img-responsive" />
                   <img v-if="loading2 == true || loading == true" class="img-responsive"  src="./../assets/loading.gif" />
                   <p>{{results}}</p>
                 </div>
-                <div class="col-sm-4">
-                  
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                  <h4>Step 1. Select an image</h4>
+                  <h4>Step 2. Detect product</h4>
+                  <h4>Step 3. CAM</h4>
+                  <h4>Step 4. Similar Products</h4>
                 </div>
               </div>
             </div>      
