@@ -47,7 +47,7 @@ def home():
     if not filename:
         flash('No file upload')
         return redirect(request.url)
-    output_fname = create_resnet_gradcam(filename)
+    output_fname, label = create_resnet_gradcam(filename)
     return redirect(url_for('uploaded_file', filename=output_fname))
 
 @app.route('/uploads/<filename>', methods=['GET', 'POST'])
@@ -79,10 +79,11 @@ def gradcam(**kargs):
     filename = get_file_upload(request)
     if not filename: return jsonify(API_RETURN["FILE_ERROR"])
     _, text = create_yolov3_detect(filename)
-    output_fname = create_resnet_gradcam(filename)
+    output_fname, label = create_resnet_gradcam(filename)
     return jsonify({
         "status": "success",
-        "data": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}",
+        "data": text,
+        "url": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}",
         "store": _get_store_list(text)
     })
 

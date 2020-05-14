@@ -38,9 +38,9 @@ def create_resnet_gradcam(filename):
     heatmap = cv2.resize(heatmap, (orig.shape[1], orig.shape[0]))
     (heatmap, output) = cam.overlay_heatmap(heatmap, orig, alpha=0.5)
     cv2.rectangle(output, (0, 0), (340, 40), (0, 0, 0), -1)
-    cv2.putText(output, label, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
+    # cv2.putText(output, label, (10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
     output = np.hstack([orig, heatmap, output])
     output = imutils.resize(output, height=700)
     output_fname = "IMAGE_NAME.png"
     cv2.imwrite(UPLOAD_FOLDER + output_fname, output)
-    return output_fname
+    return output_fname, label
