@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="full-bg">
+  <div id="app">
     
    <div class="hero__logo">
      <span style="font-size: 90px; color: white; font-weight: 300;">boot</span>
