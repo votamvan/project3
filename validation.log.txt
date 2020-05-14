@@ -1,0 +1,120 @@
+/tmp/project3/data/boot/boot-040.JPG: Predicted in 11.948170 seconds.
+boot: 100%
+/tmp/project3/data/boot/boot-047.JPG: Predicted in 11.598686 seconds.
+boot: 98%
+/tmp/project3/data/boot/boot-087.JPG: Predicted in 11.968846 seconds.
+boot: 100%
+/tmp/project3/data/boot/boot-023.JPG: Predicted in 12.210247 seconds.
+boot: 88%
+/tmp/project3/data/boot/boot-019.JPG: Predicted in 12.208224 seconds.
+boot: 98%
+/tmp/project3/data/boot/boot-015.JPG: Predicted in 12.497988 seconds.
+boot: 97%
+/tmp/project3/data/boot/boot-077.JPG: Predicted in 12.085405 seconds.
+boot: 93%
+/tmp/project3/data/boot/boot-067.JPG: Predicted in 12.749328 seconds.
+boot: 99%
+/tmp/project3/data/heel/heel-048.jpg: Predicted in 14.176443 seconds.
+heel: 97%
+heel: 87%
+/tmp/project3/data/heel/heel-067.jpg: Predicted in 12.572131 seconds.
+heel: 100%
+/tmp/project3/data/heel/heel-016.jpg: Predicted in 12.306735 seconds.
+heel: 96%
+/tmp/project3/data/heel/heel-011.jpg: Predicted in 16.193745 seconds.
+heel: 96%
+heel: 90%
+/tmp/project3/data/heel/heel-023.jpg: Predicted in 13.016696 seconds.
+heel: 81%
+/tmp/project3/data/heel/heel-030.jpg: Predicted in 15.577996 seconds.
+heel: 99%
+heel: 79%
+/tmp/project3/data/heel/heel-054.jpg: Predicted in 14.622079 seconds.
+heel: 100%
+/tmp/project3/data/heel/heel-091.jpg: Predicted in 14.695144 seconds.
+heel: 96%
+/tmp/project3/data/loafer/loafer-077.JPG: Predicted in 14.369741 seconds.
+loafer: 100%
+/tmp/project3/data/loafer/loafer-059.JPG: Predicted in 14.022186 seconds.
+loafer: 88%
+/tmp/project3/data/loafer/loafer-014.JPG: Predicted in 14.924802 seconds.
+loafer: 96%
+/tmp/project3/data/loafer/loafer-038.JPG: Predicted in 14.504376 seconds.
+sandal: 52%
+/tmp/project3/data/loafer/loafer-035.JPG: Predicted in 13.591589 seconds.
+loafer: 92%
+/tmp/project3/data/loafer/loafer-019.JPG: Predicted in 13.567509 seconds.
+loafer: 90%
+/tmp/project3/data/loafer/loafer-068.JPG: Predicted in 14.605356 seconds.
+loafer: 89%
+/tmp/project3/data/loafer/loafer-043.JPG: Predicted in 15.082528 seconds.
+loafer: 92%
+/tmp/project3/data/loafer/loafer-085.JPG: Predicted in 15.784367 seconds.
+loafer: 70%
+/tmp/project3/data/loafer/loafer-092.JPG: Predicted in 16.124458 seconds.
+loafer: 98%
+/tmp/project3/data/sandal/sandal-008.jpg: Predicted in 13.375512 seconds.
+sandal: 88%
+/tmp/project3/data/sandal/sandal-032.jpg: Predicted in 12.777446 seconds.
+sandal: 51%
+heel: 75%
+/tmp/project3/data/sandal/sandal-097.jpg: Predicted in 16.832593 seconds.
+heel: 65%
+/tmp/project3/data/sandal/sandal-090.jpg: Predicted in 13.158356 seconds.
+heel: 89%
+/tmp/project3/data/sandal/sandal-044.jpg: Predicted in 13.020555 seconds.
+sandal: 91%
+/tmp/project3/data/sandal/sandal-060.jpg: Predicted in 14.142398 seconds.
+sandal: 100%
+/tmp/project3/data/sandal/sandal-099.jpg: Predicted in 13.915544 seconds.
+sandal: 100%
+/tmp/project3/data/sandal/sandal-064.jpg: Predicted in 18.150628 seconds.
+sandal: 89%
+/tmp/project3/data/sandal/sandal-029.jpg: Predicted in 17.213392 seconds.
+sandal: 98%
+/tmp/project3/data/sandal/sandal-013.jpg: Predicted in 14.063476 seconds.
+sandal: 91%
+/tmp/project3/data/slipper/slipper-022.jpg: Predicted in 14.516494 seconds.
+sandal: 55%
+/tmp/project3/data/slipper/slipper-030.jpg: Predicted in 14.205530 seconds.
+slipper: 87%
+/tmp/project3/data/slipper/slipper-040.jpg: Predicted in 13.472235 seconds.
+sandal: 89%
+/tmp/project3/data/slipper/slipper-051.jpg: Predicted in 14.302213 seconds.
+slipper: 98%
+slipper: 93%
+/tmp/project3/data/slipper/slipper-046.jpg: Predicted in 14.274309 seconds.
+slipper: 100%
+/tmp/project3/data/slipper/slipper-088.jpg: Predicted in 12.411231 seconds.
+slipper: 50%
+/tmp/project3/data/slipper/slipper-064.jpg: Predicted in 16.424637 seconds.
+slipper: 86%
+/tmp/project3/data/slipper/slipper-066.jpg: Predicted in 12.892554 seconds.
+sneaker: 89%
+slipper: 54%
+/tmp/project3/data/slipper/slipper-003.jpg: Predicted in 25.987760 seconds.
+slipper: 96%
+/tmp/project3/data/slipper/slipper-011.jpg: Predicted in 24.583208 seconds.
+slipper: 98%
+slipper: 96%
+/tmp/project3/data/sneaker/sneakers-101.jpg: Predicted in 12.865288 seconds.
+sneaker: 82%
+sneaker: 99%
+/tmp/project3/data/sneaker/sneakers-065.jpg: Predicted in 13.106124 seconds.
+sneaker: 89%
+sneaker: 79%
+/tmp/project3/data/sneaker/sneakers-014.jpg: Predicted in 14.193480 seconds.
+sneaker: 98%
+sneaker: 96%
+/tmp/project3/data/sneaker/sneakers-010.jpg: Predicted in 13.196243 seconds.
+sneaker: 67%
+/tmp/project3/data/sneaker/sneakers-009.jpg: Predicted in 12.589342 seconds.
+sneaker: 78%
+/tmp/project3/data/sneaker/sneakers-025.jpg: Predicted in 12.487834 seconds.
+sneaker: 98%
+/tmp/project3/data/sneaker/sneakers-095.jpg: Predicted in 12.572406 seconds.
+sneaker: 66%
+sneaker: 61%
+/tmp/project3/data/sneaker/sneakers-041.jpg: Predicted in 12.279136 seconds.
+sneaker: 99%
+/tmp/project3/data/sneaker/sneakers-050.jpg: Predicted in 12.642506 seconds.
