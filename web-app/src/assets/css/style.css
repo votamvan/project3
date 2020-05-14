@@ -1,7 +1,6 @@
 .full-bg,html{
-            background: url("https://i.imgur.com/2XNzY.png");
-			 background-size: 100%;
-		
+    background: url("https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+    background-size: 100%;
 }
 
 .hero__logo {
@@ -140,8 +139,8 @@ a {
 	position: relative;
 	transition: all 0.3s;
 	vertical-align: middle;
-	background-color: #828e87;
-    border-color: #828e87;
+	background-color: #204964;
+    border-color: #204964;
 	color: #fff!important;
 	border-radius: 0 0 7px 0;
 	font-size: 1.2rem;

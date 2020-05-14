@@ -3,16 +3,20 @@
     
     <div class="hero__logo">
     </div>
-    <router-view/>
+    <MainApp/>
   </div>
   
 </template>
 
 <script>
 import './assets/css/style.css'
+import MainApp from './components/MainApp.vue'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    MainApp
+  }
 }
 </script>
 <link rel="stylesheet"  href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" type="text/css" media="all">
