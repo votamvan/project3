@@ -28,7 +28,7 @@
               </div>
             </div>      
             <div class="buttons mt-20">
-              <label :class="btnFileInput" ><input style="display: none;" type="file" name="file" id="file" @change="onFileChange" @click="clearValue"/>Choose a file</label>
+              <label :class="btnFileInput" ><input style="display: none;" accept="image/*" type="file" name="file" id="file" @change="onFileChange" @click="clearValue"/>Choose a file</label>
               <a style="margin-left: 10px;" v-on:click="detectApi" :class="btnDelect + ((item.image)?'':' disabled')">
                 <i class="fa fa-spinner fa-spin" v-if="loading2"></i>
                 Detect Product
