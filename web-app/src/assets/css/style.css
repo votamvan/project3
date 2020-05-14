@@ -26,7 +26,6 @@
 	box-sizing: border-box;
     padding-bottom: 200px;
     width: 900px;
-    height: 400px;
 }
 .col-sm-offset-2 {
     margin-left: 0px;
@@ -46,7 +45,6 @@
 	padding-right: 15px;
 	float: left;
     width: 900px;
-    height: 400px;
 	box-sizing: border-box;
 
 }
@@ -121,7 +119,9 @@ a {
     word-break: break-word;
     text-decoration: none;
 }
-
+.img-responsive{
+    max-width: 90%;
+}
 [type="file"] {
 	height: 0;
 	overflow: hidden;
