@@ -11,6 +11,9 @@
     <MainApp/>
     <div style="padding: 15px">
       <div>
+       <span style="font-size: 15px;color: white;font-weight: 100;">Professor: Mohamed Abdelrazik</span>
+      </div>
+      <div>
        <span style="font-size: 15px;color: white;font-weight: 100;">Tam Van Vo - 610746</span>
       </div>
       <div>
