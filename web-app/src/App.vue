@@ -1,9 +1,27 @@
 <template>
   <div id="app" class="full-bg">
     
-    <div class="hero__logo">
+   <div class="hero__logo">
+     <span style="font-size: 90px; color: white; font-weight: 300;">boot</span>
+     <span style="font-size: 110px; color: white; font-weight: 300;">U</span>
+     <span style="font-size: 90px; color: white; font-weight: 300;">p</span>
     </div>
     <MainApp/>
+    <div>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Tam Van Vo - 610746</span>
+    </div>
+    <div>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Quynh Pham - 610716</span>
+    </div>
+    <div>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Samsher Bahadur Rana - 611060</span>
+    </div>
+    <div>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Van Vong Tran - 610772</span>
+    </div>
+    <div>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Yared Geberetsadik Beyene - 110466</span>
+    </div>
   </div>
   
 </template>

@@ -1,14 +1,15 @@
-.full-bg,html{
-    background: url("https://images.unsplash.com/photo-1487088678257-3a541e6e3922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
+.full-bg{
+    background: url("background1.jpg");
     background-size: 100%;
+
+
 }
 
 .hero__logo {
-	padding-top: 100px;
+	padding-top: 0px;
 	margin-right: auto;
 	margin-left: auto;
-	width: 770px;
-    text-align: center;
+	width: 850px;
 }
 
 .color-box--white {
@@ -23,7 +24,7 @@
     padding-left: 15px;
 	padding-right: 15px;
 	box-sizing: border-box;
-    padding-bottom: 200px;
+    padding-bottom: 115px;
     width: 900px;
 }
 .col-sm-offset-2 {
@@ -110,7 +111,7 @@
 body {
     font-family: "Open Sans",sans-serif;
     line-height: 1.65;
-    color: #212f4f;
+    color: #b5b4af;
     background-color: #fff;
 }
 
@@ -139,8 +140,8 @@ a {
 	position: relative;
 	transition: all 0.3s;
 	vertical-align: middle;
-	background-color: #204964;
-    border-color: #204964;
+	background-color: #b5b4af;
+    border-color: #b5b4af;
 	color: #fff!important;
 	border-radius: 0 0 7px 0;
 	font-size: 1.2rem;
