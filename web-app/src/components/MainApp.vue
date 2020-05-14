@@ -143,10 +143,11 @@ export default {
         // var url = URL.createObjectURL(resp);
         // this.item.image = url;
 
-        this.item.image = resp.data+"?t=" + new Date().getTime();
+        this.item.image = resp.url+"?t=" + new Date().getTime();
         
         this.loading = false;
         this.storeDatas = resp.store;
+        this.results = resp.data;
       })
 
       e.preventDefault();
