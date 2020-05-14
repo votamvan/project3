@@ -59,29 +59,31 @@ def detect(**kargs):
     filename = get_file_upload(request)
     if not filename: return jsonify(API_RETURN["FILE_ERROR"])
     output_fname, text = create_yolov3_detect(filename)
-
-    # add store info
-    store_data = []
-    if len(text) > 2:
-        for cat in CATEGORY:
-            if cat in text:
-                store_data.extend(STORE_DATA[cat])
-
     return jsonify({
         "status": "success",
         "data": text,
         "url": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}",
-        "store": store_data
+        "store": _get_store_list(text)
     })
+
+def _get_store_list(text):
+    store_data = []
+    if text and len(text) > 2:
+        for cat in CATEGORY:
+            if cat in text:
+                store_data.extend(STORE_DATA[cat])
+    return store_data
 
 @app.route('/api/v0/gradcam', methods=['POST'])
 def gradcam(**kargs):
     filename = get_file_upload(request)
     if not filename: return jsonify(API_RETURN["FILE_ERROR"])
+    _, text = create_yolov3_detect(filename)
     output_fname = create_resnet_gradcam(filename)
     return jsonify({
         "status": "success",
-        "data": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}"
+        "data": f"{request.host_url}{url_for('uploaded_file', filename=output_fname)}",
+        "store": _get_store_list(text)
     })
 
 def get_file_upload(request):
