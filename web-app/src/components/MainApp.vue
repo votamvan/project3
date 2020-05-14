@@ -7,6 +7,14 @@
             <div class="image">
               <div class="row">
                 <div class="col-sm-8 col-md-8 col-lg-8">
+                  <h3 v-if="!item.image" class="text-center">Welcome</h3>
+                  <h3 v-if="!item.image" class="text-center">to</h3>
+                  <h3 v-if="!item.image" class="text-center">
+                    <span v-if="!item.image" style="font-size: 72px; color: #737272; font-weight: 300;">boot</span>
+                    <span v-if="!item.image" style="font-size: 88px; color: #737272; font-weight: 300;">U</span>
+                    <span v-if="!item.image" style="font-size: 72px; color: #737272; font-weight: 300;">p</span>
+                  </h3>
+                  
                   <img v-if="loading2 == false && loading == false" :src="item.image" class="img-responsive" />
                   <img v-if="loading2 == true || loading == true" class="img-responsive"  src="./../assets/loading.gif" />
                   <p>{{results}}</p>

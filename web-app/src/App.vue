@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     
-   <div class="hero__logo">
-     <span style="font-size: 90px; color: white; font-weight: 300;">boot</span>
-     <span style="font-size: 110px; color: white; font-weight: 300;">U</span>
-     <span style="font-size: 90px; color: white; font-weight: 300;">p</span>
+   <div class="container">
+     <div class="col-sm-8 col-sm-offset-2">
+       <span style="font-size: 90px; color: white; font-weight: 300;">boot</span>
+       <span style="font-size: 110px; color: white; font-weight: 300;">U</span>
+       <span style="font-size: 90px; color: white; font-weight: 300;">p</span>
+     </div>
     </div>
     <MainApp/>
     <div style="padding: 15px">
