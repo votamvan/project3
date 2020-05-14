@@ -1,5 +1,5 @@
 .full-bg{
-    background: url("https://images.unsplash.com/photo-1520188740392-665a13f453fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80");
+    background: url("background1.jpg");
     background-size: 100%;
 
 
@@ -111,7 +111,7 @@
 body {
     font-family: "Open Sans",sans-serif;
     line-height: 1.65;
-    color: #26282c;
+    color: #b5b4af;
     background-color: #fff;
 }
 
@@ -140,8 +140,8 @@ a {
 	position: relative;
 	transition: all 0.3s;
 	vertical-align: middle;
-	background-color: #26282c;
-    border-color: #26282c;
+	background-color: #b5b4af;
+    border-color: #b5b4af;
 	color: #fff!important;
 	border-radius: 0 0 7px 0;
 	font-size: 1.2rem;
