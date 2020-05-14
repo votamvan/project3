@@ -5,7 +5,7 @@
         <div class="color-box__full--large color-box--white" >
           <div>
             <h2 v-if="!item.image">Select an image</h2>
-            <input style="display: none;" type="file" name="file" id="file" @change="onFileChange"/>
+            <input style="display: none;" type="file" name="file" id="file" @change="onFileChange" @click="clearValue"/>
             <label for="file" v-if="!item.image" >Choose a file</label>       
           </div>
           <div v-if="item.image">
@@ -87,8 +87,13 @@ export default {
     }
   },
   methods: {
-
+    clearValue() {
+        var element = document.getElementById('file');
+        element.value = null;
+        
+    },
     onFileChange(e) {
+      
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length)
         return;
