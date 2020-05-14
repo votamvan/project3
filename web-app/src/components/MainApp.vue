@@ -4,11 +4,11 @@
       <div class="col-sm-8 col-sm-offset-2">
         <div class="color-box__full--large color-box--white" >
           <div>
-            <h2 v-if="!item.image">Select an image</h2>
-            <input style="display: none;" type="file" name="file" id="file" @change="onFileChange" @click="clearValue"/>
-            <label for="file" v-if="!item.image" >Choose a file</label>       
+            <h2 v-if="!item.image">Select an image
+            </h2>
+                   
           </div>
-          <div v-if="item.image">
+          <div>
             <div class="image">
               <div class="row">
                 <div class="col-sm-8">
@@ -21,30 +21,20 @@
                 </div>
               </div>
             </div>      
-            <div class="buttons">
-              <span style="padding-right: 10px;">
-                <a v-on:click="removeImage" class="btn btn-danger btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
-                Next Image
-                <i class="fa fa-step-forward"></i>
+            <div class="buttons mt-20">
+              <label :class="btnFileInput" ><input style="display: none;" type="file" name="file" id="file" @change="onFileChange" @click="clearValue"/>Choose a file</label>
+              <a style="margin-left: 10px;" v-on:click="detectApi" :class="btnDelect + ((item.image)?'':' disabled')">
+                <i class="fa fa-spinner fa-spin" v-if="loading2"></i>
+                Detect Product
               </a>
-              </span>
-              <span style="padding-right: 10px;"><a v-on:click="detectApi" class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
-              <i class="fa fa-spinner fa-spin" v-if="loading2"></i>
-              Detect Image
-            </a></span>
-              <span style="padding-right: 10px;">
-                <a v-on:click="callApi" class="btn btn-success btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" data-interaction-type="Button" id="lp-bottom-cta">
+              <a style="margin-left: 10px;" v-on:click="callApi" :class="btnCAM + ((item.image)?'':' disabled')">
                   <i class="fa fa-spinner fa-spin" v-if="loading"></i>
                   CAM
                 </a>
-            </span>
-            <span>
-              <a v-if="this.currentApi == 'DETECT' " class="btn btn-primary btn-xl mt-20" data-cta-name="lp-bottom-cta" data-segment-interaction="link" v-on:click="viewSimilarProduct" data-interaction-type="Button" id="lp-bottom-cta">
+                <a style="margin-left: 10px;" v-if="this.currentApi == 'DETECT' " :class="btnViewSimilar + ((item.image)?'':' disabled')" v-on:click="viewSimilarProduct">
                   View Similar products <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </a>
-            </span>
             </div> 
-                 
           </div>
           <div class="store-container">
               <h4>Similar products</h4>
@@ -75,6 +65,10 @@ export default {
   },
   data: function () {
     return {
+      btnFileInput:'btn btn-primary btn-xl',
+      btnDelect:'btn btn-warning btn-xl',
+      btnCAM:'btn btn-success btn-xl',
+      btnViewSimilar:'btn btn-info btn-xl',
       baseUrl:this.api.getHostUrl(),
       currentApi:'',
       loading:false,
@@ -106,13 +100,6 @@ export default {
       };
       reader.readAsDataURL(file);
       this.storeDatas = [];
-    },
-    removeImage: function (e) {
-      this.item.image = false; 
-      this.results = "";
-      this.currentApi = '';
-      e.preventDefault();
-      window.$(".store-container").slideUp();
     },
     callApi(e){
       window.$(".store-container").slideUp();
