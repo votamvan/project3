@@ -4,7 +4,11 @@
       <div class="col-sm-8 col-sm-offset-2">
         <div class="color-box__full--large color-box--white" >
           <div>
-            <h2 v-if="!item.image">Select an image
+            <h2 v-if="!item.image">
+              Step 1. Select an image<br/>
+              Step 2. Detect product<br/>
+              Step 3. CAM<br/>
+              Step 4. Similar Products
             </h2>
                    
           </div>
@@ -31,7 +35,7 @@
                   <i class="fa fa-spinner fa-spin" v-if="loading"></i>
                   CAM
                 </a>
-                <a style="margin-left: 10px;" v-if="this.currentApi == 'DETECT' " :class="btnViewSimilar + ((item.image)?'':' disabled')" v-on:click="viewSimilarProduct">
+                <a style="margin-left: 10px;" v-if="storeDatas.length > 0" :class="btnViewSimilar + ((item.image)?'':' disabled')" v-on:click="viewSimilarProduct">
                   View Similar products <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </a>
             </div> 
@@ -70,7 +74,7 @@ export default {
       btnCAM:'btn btn-success btn-xl',
       btnViewSimilar:'btn btn-info btn-xl',
       baseUrl:this.api.getHostUrl(),
-      currentApi:'',
+      
       loading:false,
       loading2:false,
       storeDatas:[],
@@ -103,7 +107,7 @@ export default {
     },
     callApi(e){
       window.$(".store-container").slideUp();
-      this.currentApi = '';
+      
       this.results = "";
       var api  = this.api.getPostApi();
       console.log("requested Url:"+api)
@@ -136,10 +140,11 @@ export default {
         console.log(resp)
         // var url = URL.createObjectURL(resp);
         // this.item.image = url;
-        //this.results = resp.data
+
         this.item.image = resp.data+"?t=" + new Date().getTime();
-        this.currentApi = 'CAM';
+        
         this.loading = false;
+        this.storeDatas = resp.store;
       })
 
       e.preventDefault();
@@ -147,7 +152,7 @@ export default {
     detectApi(e){
 
       this.results = "";
-      this.currentApi = '';
+      
       var api  = this.api.getDetectApi();
       console.log("requested Url:"+api)
 
@@ -179,7 +184,7 @@ export default {
         this.results = resp.data;
         this.storeDatas = resp.store;
         this.item.image = resp.url+"?t=" + new Date().getTime();
-        this.currentApi = 'DETECT';
+        
         this.loading2 = false;
         
       })
