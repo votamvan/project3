@@ -8,19 +8,19 @@
     </div>
     <MainApp/>
     <div>
-     <span style="font-size: 20px; ">Tam Van Vo - 610746</span>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Tam Van Vo - 610746</span>
     </div>
     <div>
-     <span style="font-size: 20px; ">Quynh Pham - 610716</span>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Quynh Pham - 610716</span>
     </div>
     <div>
-     <span style="font-size: 20px;">Samsher Bahadur Rana - 611060</span>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Samsher Bahadur Rana - 611060</span>
     </div>
     <div>
-     <span style="font-size: 20px;">Van Vong Tran - 610772</span>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Van Vong Tran - 610772</span>
     </div>
     <div>
-     <span style="font-size: 20px;">Yared Geberetsadik Beyene - 110466</span>
+     <span style="font-size: 15px;color: white;font-weight: 100;">Yared Geberetsadik Beyene - 110466</span>
     </div>
   </div>
   
