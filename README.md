@@ -1,6 +1,8 @@
 # CS582 Project3 - Deep learning
 ## To run the project just run "docker-compose up" in terminal
 
+# Run live demo at http://34.71.199.188/
+
 Professor: Mohamed Abdelrazik
 
 Team:
